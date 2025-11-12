@@ -1,11 +1,16 @@
 # CircScale
 This repository is the corresponding model repository for the paper "CircScale: Learning Scale-Adaptive Circuit Representations for Logic Synthesis Optimization"
+
 ## Abstract
 Logic Synthesis Optimization systematically transforms And-Inverter Graph (AIG) circuits through representation-guided transformations to improve circuit quality, serving as a critical step in Electronic Design Automation (EDA) workflows. However, real-world logic synthesis involves circuits with highly heterogeneous scales and dynamically evolving topologies. These characteristics pose significant challenges for previous circuit representation learning methods, which often struggle with the heterogeneous scale bottleneck and fail to capture the dynamic nature of optimization in static graph representations. This paper proposes CircScale, a framework that learns scale-adaptive circuit representations for logic synthesis optimization. Specifically, CircScale employs multi-hop neighborhood aggregation with circuit-aware gating to dynamically balance structural features across heterogeneous scales. It further introduces an early graph-sequence interaction mechanism that models circuit evolution and dynamically guides the optimization process. Comprehensive experiments are performed on 124,500 circuit-sequence pairs collected from five benchmarks, and the results demonstrate the superior representation capability of CircScale, achieving 14.89\%-38.39\% delay reduction and 23.89\%-38.87\% area improvement over state-of-the-art methods. These results confirm that CircScale effectively learns comprehensive and adaptive circuit representations for logic synthesis optimization.
+
 ## Requirements
 Python >= 3.8
-/PyTorch >= 2.1.2
-/PyTorch Geometric >= 2.6.1
+
+PyTorch >= 2.1.2
+
+PyTorch Geometric >= 2.6.1
+
 ## Project Structure
 CircScale/
 ├── config.py                # Configuration files
