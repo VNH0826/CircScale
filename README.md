@@ -11,55 +11,6 @@ PyTorch >= 2.1.2
 
 PyTorch Geometric >= 2.6.1
 
-## Project Structure
-CircScale/
-
-├── config.py                # Configuration files
-
-├── data
-
-├── datasets/
-
-│   ├── EPFL
-
-│   ├── ISCAS85_bench
-
-│   ├── ISCAS89_bench
-
-│   ├── OpenABC-D
-
-│   └── OpenCores_bench
-
-├── data_files
-
-├── data_files_epfl
-
-├── data_files_iscas85
-
-├── data_files_iscas89
-
-├── data_files_openabc
-
-├── data_files_opencores
-
-├── models/                  # Model implementations
-
-│   └── circscale
-
-├── utils/                   # Helper functions
-
-│   ├── _init_.py
-
-│   ├── helper.py
-
-│   ├── visualization.py
-
-│   └── metrics
-
-├── train.py                 # Training script
-
-└── inference.py             # Inference script
-
 # Sequence Generation Details:
 Number of sequences per circuit: 1,500
 
@@ -80,6 +31,16 @@ All circuits are visible in both training and testing phases, Optimization seque
 
 # Model Training
 ## Delay Prediction
-...python
+```python
 python train.py --dataset epfl --metric Delay --use_dynamic_interaction --use_multiscale
-...
+```
+## Area Prediction
+```python
+python train.py --dataset epfl --metric Area --use_dynamic_interaction --use_multiscale
+```
+
+# Model Inference
+```python
+python inference.py --model_path --vocab_path --metric Delay --dataset epfl --use_multiscale --use_dynamic_interaction
+python inference.py --model_path --vocab_path --metric Area --dataset epfl --use_multiscale --use_dynamic_interaction
+```
