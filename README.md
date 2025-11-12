@@ -13,36 +13,73 @@ PyTorch Geometric >= 2.6.1
 
 ## Project Structure
 CircScale/
+
 ├── config.py                # Configuration files
+
 ├── data
+
 ├── datasets/
+
 │   ├── EPFL
+
 │   ├── ISCAS85_bench
+
 │   ├── ISCAS89_bench
+
 │   ├── OpenABC-D
+
 │   └── OpenCores_bench
+
 ├── data_files
+
 ├── data_files_epfl
+
 ├── data_files_iscas85
+
 ├── data_files_iscas89
+
 ├── data_files_openabc
+
 ├── data_files_opencores
+
 ├── models/                  # Model implementations
+
 │   └── circscale
+
 ├── utils/                   # Helper functions
+
 │   ├── _init_.py
+
 │   ├── helper.py
+
 │   ├── visualization.py
+
 │   └── metrics
+
 ├── train.py                 # Training script
+
 └── inference.py             # Inference script
+
 # Sequence Generation Details:
 Number of sequences per circuit: 1,500
+
 Sequence length: 20 steps
+
 Total samples: 124,500 circuit-sequence pairs (83 circuits × 1,500 sequences)
+
 QoR metrics: Delay and area recorded after each optimization step
-#Data Split
+
+# Data Split
 Recipe-Inductive Setup:
+
 Training set: 66% (randomly selected recipes)
+
 Validation set: 34% (non-overlapping recipes)
+
 All circuits are visible in both training and testing phases, Optimization sequences are completely non-overlapping across splits
+
+# Model Training
+## Delay Prediction
+...python
+python train.py --dataset epfl --metric Delay --use_dynamic_interaction --use_multiscale
+...
